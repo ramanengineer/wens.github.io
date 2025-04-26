@@ -7,10 +7,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        /* CSS remains unchanged */
         :root {
             --primary-bg: #1e1e2e;
             --secondary-bg: #2a2a3c;
-            --accent: #1a5c38; /* Default accent, overridden by active tab */
+            --accent: #1a5c38;
             --text: #f1f5f9;
             --glass-bg: rgba(255, 255, 255, 0.05);
             --glass-border: rgba(255, 255, 255, 0.1);
@@ -46,7 +47,6 @@
             --glass-bg: rgba(255, 255, 255, 0.1);
         }
 
-        /* Tab-specific styles */
         #wens-content.active { --accent: #1a5c38; --tab-bg: #2f8c5e; }
         #wets-content.active { --accent: #004d99; --tab-bg: #1e78c2; }
         #wess-content.active { --accent: #4b0082; --tab-bg: #6f2ab5; }
@@ -75,7 +75,6 @@
         h1, h2, h3 { font-weight: 700; text-align: center; }
         button { cursor: pointer; border: none; background: none; font-family: inherit; touch-action: manipulation; }
 
-        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -97,7 +96,6 @@
             100% { background-position: 400% 50%; }
         }
 
-        /* Main */
         .main {
             display: flex;
             flex-direction: column;
@@ -106,7 +104,6 @@
             max-width: 1280px;
         }
 
-        /* Header */
         .intro {
             text-align: center;
             margin-bottom: 2.5rem;
@@ -162,7 +159,6 @@
             filter: brightness(1.05);
         }
 
-        /* Tab Navigation */
         .tab-nav {
             display: flex;
             justify-content: center;
@@ -207,7 +203,6 @@
             animation: pulse 0.5s ease;
         }
 
-        /* Container */
         .container {
             width: 100%;
             max-width: 800px;
@@ -316,7 +311,6 @@
             opacity: 0.9;
         }
 
-        /* Buttons */
         .youtube-button {
             background: var(--color-youtube);
             padding: 0.75rem 1.75rem;
@@ -387,7 +381,6 @@
             font-size: 1.25rem;
         }
 
-        /* Blog Links Section */
         .blog-links-section {
             margin-top: 2.5rem;
             padding: 1.75rem;
@@ -502,7 +495,6 @@
             font-size: 1.25rem;
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 1.5rem;
@@ -518,7 +510,6 @@
             animation: fadeIn 1.4s ease-out forwards;
         }
 
-        /* Toast Notification */
         .toast {
             position: fixed;
             bottom: 30px;
@@ -542,7 +533,6 @@
             transform: translateX(-50%) translateY(-10px);
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             body {
                 padding: 1.5rem;
@@ -631,7 +621,7 @@
                 <img src="https://i.postimg.cc/Y9rCyZNZ/WENS-profile-1.png" alt="WENS Icon" class="tab-icon">
                 <h2>Weekly English News Show</h2>
                 <div class="tab-info">
-                    <p>New video every week on SUNDAY 7pm NZST</p>
+                    <p>New video every week on MONDAY 7:00 PM NZT</p>
                 </div>
                 <div class="tab-status">
                     <div class="tab-timer" data-channel="wens"></div>
@@ -659,7 +649,7 @@
                 <img src="https://i.postimg.cc/P5DJLmr3/WETS-profile.png" alt="WETS Icon" class="tab-icon">
                 <h2>Weekly English Tech Show</h2>
                 <div class="tab-info">
-                    <p>New video every week on SUNDAY 7pm NZST</p>
+                    <p>New video every week on TUESDAY 7:00 PM NZT</p>
                 </div>
                 <div class="tab-status">
                     <div class="tab-timer" data-channel="wets"></div>
@@ -687,7 +677,7 @@
                 <img src="https://i.postimg.cc/SKpscJny/WESS-profile.png" alt="WESS Icon" class="tab-icon">
                 <h2>Weekly English Scary Show</h2>
                 <div class="tab-info">
-                    <p>New video every week on SUNDAY 7pm NZST</p>
+                    <p>New video every week on WEDNESDAY 7:00 PM NZT</p>
                 </div>
                 <div class="tab-status">
                     <div class="tab-timer" data-channel="wess"></div>
@@ -715,7 +705,7 @@
                 <img src="https://i.postimg.cc/PxS5Gy2x/WEMS.png" alt="WEMS Icon" class="tab-icon">
                 <h2>Weekly English Movie Show</h2>
                 <div class="tab-info">
-                    <p>New video every week on SUNDAY 7pm NZST</p>
+                    <p>New video every week on THURSDAY 7:00 PM NZT</p>
                 </div>
                 <div class="tab-status">
                     <div class="tab-timer" data-channel="wems"></div>
@@ -740,10 +730,10 @@
 
             <!-- WEBS Tab Content -->
             <div id="webs-content" class="tab-content">
-                <img src="https://i.postimg.cc/QMkMmh7c/WEVS-profile-1.png" alt="WEBS Icon" class="tab-icon">
+                <img src="https://i.postimg.cc/Hx5yxHyK/WEBS.png" alt="WEBS Icon" class="tab-icon">
                 <h2>Weekly English Blog Show</h2>
                 <div class="tab-info">
-                    <p>New video every week on SUNDAY 7pm NZST</p>
+                    <p>New video every week on FRIDAY 7:00 PM NZT</p>
                 </div>
                 <div class="tab-status">
                     <div class="tab-timer" data-channel="webs"></div>
@@ -812,11 +802,9 @@
 
             // Tab switching with dynamic accent color
             function switchTab(button) {
-                // Remove active class from all buttons and contents
                 tabButtons.forEach(btn => btn.classList.remove('active'));
                 tabContents.forEach(content => content.classList.remove('active'));
 
-                // Add active class to clicked button and corresponding content
                 button.classList.add('active');
                 const contentId = button.getAttribute('data-tab');
                 const content = document.getElementById(contentId);
@@ -824,11 +812,9 @@
                     content.classList.add('active');
                 }
 
-                // Update accent color
                 const accentColor = button.getAttribute('data-accent');
                 document.documentElement.style.setProperty('--accent', accentColor);
 
-                // Smooth scroll to container
                 document.querySelector('.container').scrollIntoView({ behavior: 'smooth' });
             }
 
@@ -844,49 +830,59 @@
 
             // Timer and video upload check
             const channels = [
-                { id: 'wens', name: 'WeeklyEnglishNewsShow' },
-                { id: 'wets', name: 'WeeklyEnglishTechShow' },
-                { id: 'wess', name: 'WeeklyEnglishScaryShow' },
-                { id: 'wems', name: 'WeeklyEnglishMovieShow' },
-                { id: 'webs', name: 'WeeklyEnglishBlogShow' }
+                { id: 'wens', name: 'WeeklyEnglishNewsShow', uploadDay: 1 }, // Monday
+                { id: 'wets', name: 'WeeklyEnglishTechShow', uploadDay: 2 }, // Tuesday
+                { id: 'wess', name: 'WeeklyEnglishScaryShow', uploadDay: 3 }, // Wednesday
+                { id: 'wems', name: 'WeeklyEnglishMovieShow', uploadDay: 4 }, // Thursday
+                { id: 'webs', name: 'WeeklyEnglishBlogShow', uploadDay: 5 }  // Friday
             ];
 
             function updateTimersAndUploads() {
                 const now = new Date();
                 const nzTime = new Date(now.toLocaleString("en-US", { timeZone: "Pacific/Auckland" }));
-                const isDST = nzTime.getTimezoneOffset() === -780;
+                const isDST = nzTime.getTimezoneOffset() === -780; // NZDT: -13h, NZST: -12h
 
                 channels.forEach(channel => {
                     const timerEl = document.querySelector(`.tab-timer[data-channel="${channel.id}"]`);
                     const uploadEl = document.querySelector(`.tab-upload-message[data-channel="${channel.id}"]`);
 
+                    // Calculate next upload time (7:00 PM NZT on channel's upload day)
                     let nextUpload = new Date(nzTime);
-                    nextUpload.setHours(12, 0, 0, 0);
-                    while (nextUpload.getDay() !== 0 || nextUpload <= nzTime) {
-                        nextUpload.setDate(nextUpload.getDate() + 1);
+                    nextUpload.setHours(19, 0, 0, 0); // 7:00 PM NZT
+                    const currentDay = nzTime.getDay();
+                    const daysUntilUpload = (channel.uploadDay - currentDay + 7) % 7 || 7;
+                    nextUpload.setDate(nzTime.getDate() + daysUntilUpload);
+
+                    // Adjust for DST transitions
+                    const dstEnd2025 = new Date('2025-04-06T03:00:00+1300'); // NZDT to NZST
+                    const dstStart2025 = new Date('2025-09-28T02:00:00+1200'); // NZST to NZDT
+                    if (nextUpload >= dstEnd2025 && nextUpload < dstStart2025 && isDST) {
+                        nextUpload.setHours(nextUpload.getHours() - 1); // Adjust for NZST
+                    } else if (nextUpload >= dstStart2025 && !isDST) {
+                        nextUpload.setHours(nextUpload.getHours() + 1); // Adjust for NZDT
                     }
 
-                    const dstStart2025 = new Date('2025-09-28T02:00:00+1200');
-                    const dstEnd2026 = new Date('2026-04-05T03:00:00+1300');
-                    if (nextUpload >= dstStart2025 && nextUpload < dstEnd2026 && !isDST) {
-                        nextUpload.setHours(nextUpload.getHours() + 1);
-                    } else if (nextUpload >= dstEnd2026 && isDST) {
-                        nextUpload.setHours(nextUpload.getHours() - 1);
-                    }
-
-                    const timeDiff = nextUpload - nzTime;
+                    // Calculate time difference for countdown
+                    const timeDiff = nextUpload - now; // Difference in local time
                     const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
                     const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                     const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
                     const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
 
+                    // Format timer display
                     if (timerEl) {
-                        timerEl.textContent = `Next video in ${days}d ${hours}h ${minutes}m ${seconds}s`;
+                        if (timeDiff <= 0) {
+                            timerEl.textContent = `Next video is uploading soon!`;
+                        } else {
+                            timerEl.textContent = `Next video in ${days}d ${hours}h ${minutes}m ${seconds}s`;
+                        }
                     }
 
+                    // Update upload message
                     if (uploadEl) {
-                        const isTodaySunday = nzTime.getDay() === 0;
-                        uploadEl.textContent = isTodaySunday
+                        const isUploadDay = nzTime.getDay() === channel.uploadDay;
+                        const isAfterUploadTime = nzTime.getHours() >= 19;
+                        uploadEl.textContent = isUploadDay && isAfterUploadTime
                             ? `Video uploaded today! Check it out!`
                             : `No video uploaded today.`;
                     }
