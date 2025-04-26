@@ -21,6 +21,20 @@
             --color-bitcoin-hover: #e0861a;
             --color-ethereum: #627eea;
             --color-ethereum-hover: #4b5fd1;
+            --color-amiretarded: #ff6f61;
+            --color-amiretarded-hover: #e55a4e;
+            --color-lockedin: #4caf50;
+            --color-lockedin-hover: #3d8b40;
+            --color-bigpepe: #2196f3;
+            --color-bigpepe-hover: #1a7ac2;
+            --color-offensivephrases: #9c27b0;
+            --color-offensivephrases-hover: #7b1f8e;
+            --color-lookatthiscutie: #ff4081;
+            --color-lookatthiscutie-hover: #d9366c;
+            --color-sanatan: #ffc107;
+            --color-sanatan-hover: #e6a700;
+            --color-wenscoffee: #795548;
+            --color-wenscoffee-hover: #5f433f;
             --border-radius: 16px;
             --transition: all 0.3s ease;
         }
@@ -78,6 +92,11 @@
             100% { box-shadow: 0 0 8px var(--accent); }
         }
 
+        @keyframes sleekGradientGlow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 400% 50%; }
+        }
+
         /* Main */
         .main {
             display: flex;
@@ -100,6 +119,31 @@
             width: 100%;
             max-width: 800px;
             animation: fadeIn 0.8s ease-out forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .intro::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                #1a5c38,
+                #004d99,
+                #4b0082,
+                #a30000,
+                #1e3a5f,
+                #1a5c38
+            );
+            background-size: 400%;
+            animation: sleekGradientGlow 12s linear infinite;
+            opacity: 0.5;
+            z-index: 0;
+            filter: blur(20px);
         }
 
         .intro img {
@@ -109,6 +153,8 @@
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
             transition: var(--transition);
+            position: relative;
+            z-index: 1;
         }
 
         .intro img:hover {
@@ -341,32 +387,119 @@
             font-size: 1.25rem;
         }
 
-        /* Form Section */
-        .form-section {
-            margin-top: 1.75rem;
+        /* Blog Links Section */
+        .blog-links-section {
+            margin-top: 2.5rem;
             padding: 1.75rem;
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
             backdrop-filter: blur(10px);
             border-radius: var(--border-radius);
             width: 100%;
+            max-width: 800px;
             animation: fadeIn 0.8s ease-out forwards;
+            text-align: center;
         }
 
-        .form-section h3 {
+        .blog-links-section h3 {
             font-size: clamp(1.4rem, 3vw, 1.6rem);
             font-weight: 700;
             margin-bottom: 1.25rem;
             color: var(--accent);
         }
 
-        .form-section iframe {
-            width: 100%;
-            height: 450px;
-            border: none;
-            border-radius: var(--border-radius);
+        .blog-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+            justify-content: center;
+        }
+
+        .blog-link {
+            padding: 0.75rem 1.75rem;
+            border-radius: 10px;
+            font-size: clamp(0.95rem, 2.5vw, 1rem);
+            font-weight: 600;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: var(--transition);
             box-shadow: var(--shadow);
-            background: #ffffff;
+        }
+
+        .blog-link.amiretarded {
+            background: var(--color-amiretarded);
+        }
+
+        .blog-link.amiretarded:hover {
+            background: var(--color-amiretarded-hover);
+            transform: translateY(-2px);
+            animation: pulse 0.5s ease;
+        }
+
+        .blog-link.lockedin {
+            background: var(--color-lockedin);
+        }
+
+        .blog-link.lockedin:hover {
+            background: var(--color-lockedin-hover);
+            transform: translateY(-2px);
+            animation: pulse 0.5s ease;
+        }
+
+        .blog-link.bigpepe {
+            background: var(--color-bigpepe);
+        }
+
+        .blog-link.bigpepe:hover {
+            background: var(--color-bigpepe-hover);
+            transform: translateY(-2px);
+            animation: pulse 0.5s ease;
+        }
+
+        .blog-link.offensivephrases {
+            background: var(--color-offensivephrases);
+        }
+
+        .blog-link.offensivephrases:hover {
+            background: var(--color-offensivephrases-hover);
+            transform: translateY(-2px);
+            animation: pulse 0.5s ease;
+        }
+
+        .blog-link.lookatthiscutie {
+            background: var(--color-lookatthiscutie);
+        }
+
+        .blog-link.lookatthiscutie:hover {
+            background: var(--color-lookatthiscutie-hover);
+            transform: translateY(-2px);
+            animation: pulse 0.5s ease;
+        }
+
+        .blog-link.sanatan {
+            background: var(--color-sanatan);
+        }
+
+        .blog-link.sanatan:hover {
+            background: var(--color-sanatan-hover);
+            transform: translateY(-2px);
+            animation: pulse 0.5s ease;
+        }
+
+        .blog-link.wenscoffee {
+            background: var(--color-wenscoffee);
+        }
+
+        .blog-link.wenscoffee:hover {
+            background: var(--color-wenscoffee-hover);
+            transform: translateY(-2px);
+            animation: pulse 0.5s ease;
+        }
+
+        .blog-link i {
+            font-size: 1.25rem;
         }
 
         /* Footer */
@@ -437,17 +570,13 @@
                 height: 24px;
             }
 
-            .youtube-button, .donation-button {
+            .youtube-button, .donation-button, .blog-link {
                 padding: 0.6rem 1.5rem;
                 font-size: clamp(0.9rem, 2.5vw, 1rem);
             }
 
-            .form-section {
+            .blog-links-section {
                 padding: 1.25rem;
-            }
-
-            .form-section iframe {
-                height: 400px;
             }
         }
 
@@ -462,13 +591,9 @@
                 height: 20px;
             }
 
-            .youtube-button, .donation-button {
+            .youtube-button, .donation-button, .blog-link {
                 padding: 0.5rem 1.25rem;
                 font-size: clamp(0.85rem, 2vw, 0.9rem);
-            }
-
-            .form-section iframe {
-                height: 350px;
             }
         }
     </style>
@@ -524,10 +649,9 @@
                     </button>
                 </div>
                 <p>Welcome to the main hub for weekly English news updates! We bring you the latest news in an engaging format, perfect for staying informed while improving your English skills.</p>
-                <div class="form-section">
-                    <h3>Submit a News Story to React To</h3>
-                    <iframe src="https://docs.google.com/forms/d/e/[FORM_ID]/viewform?embedded=true" frameborder="0">Loading...</iframe>
-                </div>
+                <a href="https://www.youtube.com/@WeeklyEnglishNewsShow/videos" target="_blank" class="youtube-button">
+                    <i class="fas fa-play"></i> Check the Latest Upload
+                </a>
             </div>
 
             <!-- WETS Tab Content -->
@@ -553,10 +677,9 @@
                     </button>
                 </div>
                 <p>Dive into the world of technology with WeeklyEnglishTechShow! Get the latest tech news, gadget reviews, and updates every week, all in English.</p>
-                <div class="form-section">
-                    <h3>Submit a Tech Product to React To</h3>
-                    <iframe src="https://docs.google.com/forms/d/e/[FORM_ID]/viewform?embedded=true" frameborder="0">Loading...</iframe>
-                </div>
+                <a href="https://www.youtube.com/@WeeklyEnglishTechShow/videos" target="_blank" class="youtube-button">
+                    <i class="fas fa-play"></i> Check the Latest Upload
+                </a>
             </div>
 
             <!-- WESS Tab Content -->
@@ -582,10 +705,9 @@
                     </button>
                 </div>
                 <p>Love a good scare? WeeklyEnglishScaryShow delivers spine-chilling stories, horror news, and creepy tales every week to thrill you in English.</p>
-                <div class="form-section">
-                    <h3>Submit a Scary Story to Cover</h3>
-                    <iframe src="https://docs.google.com/forms/d/e/[FORM_ID]/viewform?embedded=true" frameborder="0">Loading...</iframe>
-                </div>
+                <a href="https://www.youtube.com/@WeeklyEnglishScaryShow/videos" target="_blank" class="youtube-button">
+                    <i class="fas fa-play"></i> Check the Latest Upload
+                </a>
             </div>
 
             <!-- WEMS Tab Content -->
@@ -611,10 +733,9 @@
                     </button>
                 </div>
                 <p>Movie buffs unite! WeeklyEnglishMovieShow covers movie reviews, industry news, and updates, all delivered weekly in English.</p>
-                <div class="form-section">
-                    <h3>Submit a Movie to React To</h3>
-                    <iframe src="https://docs.google.com/forms/d/e/[FORM_ID]/viewform?embedded=true" frameborder="0">Loading...</iframe>
-                </div>
+                <a href="https://www.youtube.com/@WeeklyEnglishMovieShow/videos" target="_blank" class="youtube-button">
+                    <i class="fas fa-play"></i> Check the Latest Upload
+                </a>
             </div>
 
             <!-- WEBS Tab Content -->
@@ -640,10 +761,40 @@
                     </button>
                 </div>
                 <p>Explore our blog content with WeeklyEnglishBlogShow! We share insightful articles, stories, and more every week, all in English.</p>
-                <div class="form-section">
-                    <h3>Submit a Topic to Write About</h3>
-                    <iframe src="https://docs.google.com/forms/d/e/[FORM_ID]/viewform?embedded=true" frameborder="0">Loading...</iframe>
-                </div>
+                <a href="https://www.youtube.com/@WeeklyEnglishBlogShow/videos" target="_blank" class="youtube-button">
+                    <i class="fas fa-play"></i> Check the Latest Upload
+                </a>
+                <a href="https://wens.coffee" target="_blank" class="blog-link wenscoffee">
+                    <i class="fas fa-coffee"></i> WENS.Coffee
+                </a>
+            </div>
+        </div>
+
+        <!-- Blog Links Section -->
+        <div class="blog-links-section">
+            <h3>Check Out Our Blogs</h3>
+            <div class="blog-links">
+                <a href="https://amiretarded.blog" target="_blank" class="blog-link amiretarded">
+                    <i class="fas fa-question-circle"></i> AmIRetarded.Blog
+                </a>
+                <a href="https://lockedin.faith" target="_blank" class="blog-link lockedin">
+                    <i class="fas fa-lock"></i> LockedIn.Faith
+                </a>
+                <a href="https://bigpepe.me" target="_blank" class="blog-link bigpepe">
+                    <i class="fas fa-frog"></i> BigPepe.Me
+                </a>
+                <a href="https://offensivephrases.com" target="_blank" class="blog-link offensivephrases">
+                    <i class="fas fa-exclamation-triangle"></i> OffensivePhrases.Com
+                </a>
+                <a href="https://lookatthiscutie.com" target="_blank" class="blog-link lookatthiscutie">
+                    <i class="fas fa-heart"></i> LookAtThisCutie.Com
+                </a>
+                <a href="https://sanatan.faith" target="_blank" class="blog-link sanatan">
+                    <i class="fas fa-pray"></i> Sanatan.Faith
+                </a>
+                <a href="https://wens.coffee" target="_blank" class="blog-link wenscoffee">
+                    <i class="fas fa-coffee"></i> WENS.Coffee
+                </a>
             </div>
         </div>
     </main>
